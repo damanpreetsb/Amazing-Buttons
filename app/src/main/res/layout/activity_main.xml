@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.singh.daman.librarydemo.MainActivity">
+
+    <com.singh.daman.mybutton.MyButton
+        android:id="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:fill_color="@color/colorPrimaryDark"
+        app:button_type="rectangle"
+        app:stroke_color="@color/colorAccent"
+        app:stroke_width="15sp"
+        app:text="Hello"
+        app:text_size="50dp"
+        app:text_color="#ffff"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
