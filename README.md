@@ -39,7 +39,8 @@ dependencies {
 
 Define ``` xmlns:app="http://schemas.android.com/apk/res-auto" ``` on root of your xml file
 
-```<com.singh.daman.mybutton.MyButton
+```
+<com.singh.daman.mybutton.MyButton
        ...
         app:fill_color="@color/colorPrimaryDark"
         app:button_type="rectangle"
