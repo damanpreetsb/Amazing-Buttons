@@ -1,28 +1,15 @@
 package com.singh.daman.mybutton;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.os.Build;
-import android.os.Handler;
 import android.util.AttributeSet;
-import android.util.TypedValue;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
-import com.singh.daman.mybutton.R;
 
 public class MyButton extends ImageView {
 
@@ -37,7 +24,7 @@ public class MyButton extends ImageView {
     private int roundness = 5;
     private int type;
     private int strokewidth = 5;
-    private int textsize;
+    private int textsize = 20;
 
     private Paint circlePaint;
     private Paint strokePaint;
@@ -62,32 +49,64 @@ public class MyButton extends ImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Rect bounds = new Rect();
-        textPaint.getTextBounds(text, 0, text.length(), bounds);
-        int height = bounds.bottom + bounds.height();
-        float length = textPaint.measureText(text);
         switch (type){
             case BUTTON_CIRCLE:
                 canvas.drawCircle(ValueX/2, ValueY/2, CircleRadius/2, strokePaint);
                 canvas.drawCircle(ValueX/2, ValueY/2, CircleRadius/2, circlePaint);
-                canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                try {
+                    if (!text.isEmpty() || text != null) {
+                        Rect bounds = new Rect();
+                        textPaint.getTextBounds(text, 0, text.length(), bounds);
+                        float height = bounds.height();
+                        float length = textPaint.measureText(text);
+                        canvas.drawText(text, ValueX / 2 - length / 2, ValueY/2 + height/2, textPaint);
+                    }
+                }catch (Exception e){
+                }
                 break;
             case BUTTON_RECT:
                 canvas.drawRect(0, 0, ValueX, ValueY, circlePaint );
                 canvas.drawRect(0, 0, ValueX, ValueY, strokePaint );
-                canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                try{
+                if(!text.equals("null")){
+                    Rect bounds = new Rect();
+                    textPaint.getTextBounds(text, 0, text.length(), bounds);
+                    float height = bounds.height();
+                    float length = textPaint.measureText(text);
+                    canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                }
+                }catch (Exception e){
+                }
                 break;
             case ROUND_RECT:
                 if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     canvas.drawRoundRect(0, 0, ValueX, ValueY, roundness, roundness, circlePaint);
                     canvas.drawRoundRect(0, 0, ValueX, ValueY, roundness, roundness, strokePaint);
-                    canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                    try {
+                        if (!text.equals("null")) {
+                            Rect bounds = new Rect();
+                            textPaint.getTextBounds(text, 0, text.length(), bounds);
+                            float height = bounds.height();
+                            float length = textPaint.measureText(text);
+                            canvas.drawText(text, ValueX / 2 - length / 2, ValueY/2 + height/2, textPaint);
+                        }
+                    }catch (Exception e){
+                     }
                     break;
                 }
                 else {
                     canvas.drawRect(0, 0, ValueX, ValueY, circlePaint);
                     canvas.drawRect(0, 0, ValueX, ValueY, strokePaint );
-                    canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                    try{
+                    if(!text.equals("null")){
+                        float length = textPaint.measureText(text);
+                        Rect bounds = new Rect();
+                        textPaint.getTextBounds(text, 0, text.length(), bounds);
+                        float height = bounds.height();
+                        canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                    }
+                    }catch (Exception e){
+                    }
                     break;
                 }
             case STAR:
@@ -113,7 +132,16 @@ public class MyButton extends ImageView {
                 path.close();
                 canvas.drawPath(path, strokePaint);
                 canvas.drawPath(path, circlePaint);
-                canvas.drawText(text, ValueX/2 - length/2, ValueY/2 + height/2, textPaint);
+                try {
+                    if (!text.equals("null")) {
+                        Rect bounds = new Rect();
+                        textPaint.getTextBounds(text, 0, text.length(), bounds);
+                        float height = bounds.bottom + bounds.height();
+                        float length = textPaint.measureText(text);
+                        canvas.drawText(text, ValueX / 2 - length / 2, ValueY / 2 + height / 2, textPaint);
+                    }
+                }catch (Exception e){
+                }
                 break;
         }
 
@@ -157,6 +185,7 @@ public class MyButton extends ImageView {
         int color = Color.BLACK;
         int strokecolor = Color.BLACK;
         int textcolor =Color.BLACK;
+        text = "null";
         if (attrs != null) {
             final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AmazingButtons);
             color = a.getColor(R.styleable.AmazingButtons_fill_color, color);

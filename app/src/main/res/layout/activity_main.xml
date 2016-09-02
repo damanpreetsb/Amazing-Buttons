@@ -4,19 +4,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.singh.daman.librarydemo.MainActivity">
+    tools:context="com.singh.daman.librarydemo.MainActivity"
+    android:padding="10dp">
 
     <com.singh.daman.mybutton.MyButton
         android:id="@+id/button1"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:fill_color="@color/colorPrimaryDark"
+        app:button_type="circle"
+        app:stroke_color="@color/colorAccent"
+        app:stroke_width="15sp"
+        app:text_color="#ffff"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <com.singh.daman.mybutton.MyButton
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:fill_color="@android:color/secondary_text_dark"
         app:button_type="rectangle"
         app:stroke_color="@color/colorAccent"
         app:stroke_width="15sp"
-        app:text="Hello"
-        app:text_size="50dp"
+        app:text="Rectangle"
+        app:text_size="20sp"
+        app:text_color="#000"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.singh.daman.mybutton.MyButton
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:fill_color="@color/colorPrimaryDark"
+        app:button_type="star"
+        app:stroke_color="@color/colorAccent"
+        app:stroke_width="15sp"
+        app:text="Button"
+        app:text_size="16sp"
         app:text_color="#ffff"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
