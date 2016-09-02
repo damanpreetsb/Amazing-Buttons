@@ -37,7 +37,7 @@ dependencies {
 
 ## Usage
 
-Define xmlns:app="http://schemas.android.com/apk/res-auto" on root of your xml file
+Define ``` xmlns:app="http://schemas.android.com/apk/res-auto" ``` on root of your xml file
 
 ```<com.singh.daman.mybutton.MyButton
        ...
