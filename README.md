@@ -55,6 +55,7 @@ Define ``` xmlns:app="http://schemas.android.com/apk/res-auto" ``` on root of yo
 
 ## Developed By
 Damanpreet Singh
+
 Special thanks to [Angad Singh](https://github.com/Angads25/)
 
 ## LICENCE
