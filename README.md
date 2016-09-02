@@ -1,11 +1,11 @@
 # Amazing-Buttons
-FButton is a custom Button of Android with "Flat UI" concept. FButton's design get inspiration from designmono. This library is very small and highly customizable.
+Amazing-Buttons are buttons with custom shapes and UI. This library is small but highly customizable.
 
 ## Screenshot
 ![alt text](https://cloud.githubusercontent.com/assets/19357334/18201789/b74fa53a-7129-11e6-8451-5ec3ff717b72.png)
 
 ## Including in your project
-First add the following to your build.gradle(Project)
+Add the following to your build.gradle(Project)
 ```
 allprojects {
     repositories {
@@ -15,7 +15,7 @@ allprojects {
 }
 ```
 
-You just need to add the following dependency to your build.gradle.
+Now, You just need to add the following dependency to your build.gradle.
 ```
 dependencies {
     compile 'com.github.DamanSingh4321:Amazing-Buttons:1.0'
