@@ -1,53 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.singh.daman.librarydemo.MainActivity"
-    android:padding="10dp">
+    android:layout_margin="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.singh.daman.librarydemo.MainActivity">
 
-    <com.singh.daman.mybutton.MyButton
-        android:id="@+id/button1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:fill_color="@color/colorPrimaryDark"
-        app:button_type="circle"
-        app:stroke_color="@color/colorAccent"
-        app:stroke_width="15sp"
-        app:text_color="#ffff"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal">
 
-    <com.singh.daman.mybutton.MyButton
-        android:id="@+id/button2"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        app:fill_color="@android:color/secondary_text_dark"
-        app:button_type="rectangle"
-        app:stroke_color="@color/colorAccent"
-        app:stroke_width="15sp"
-        app:text="Rectangle"
-        app:text_size="20sp"
-        app:text_color="#000"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <com.singh.daman.mybutton.ShapedButton
+            android:id="@+id/round"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:fill_color="@color/colorPrimaryDark"
+            app:button_type="round_rectangle"
+            app:stroke_color="@color/colorAccent"
+            app:stroke_width="12sp"
+            app:text="Round Rectangle"
+            app:text_size="16sp"
+            app:text_color="#ffff"
+            android:layout_gravity="center"
+            android:background="@null" />
 
-    <com.singh.daman.mybutton.MyButton
-        android:id="@+id/button3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:fill_color="@color/colorPrimaryDark"
-        app:button_type="star"
-        app:stroke_color="@color/colorAccent"
-        app:stroke_width="15sp"
-        app:text="Button"
-        app:text_size="16sp"
-        app:text_color="#ffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <View
+            android:layout_width="@dimen/activity_vertical_margin"
+            android:layout_height="match_parent"/>
 
-</RelativeLayout>
+        <com.singh.daman.mybutton.ShapedButton
+            android:id="@+id/rectangle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:fill_color="@android:color/secondary_text_dark"
+            app:button_type="rectangle"
+            app:stroke_color="@color/colorAccent"
+            app:stroke_width="15sp"
+            app:text="Rectangle"
+            app:text_size="20sp"
+            app:text_color="#000"
+            android:layout_gravity="center"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal">
+
+        <com.singh.daman.mybutton.ShapedButton
+            android:id="@+id/star"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:fill_color="@color/colorPrimaryDark"
+            app:button_type="star"
+            app:stroke_color="@color/colorAccent"
+            app:stroke_width="12sp"
+            app:text="Star"
+            app:text_size="16sp"
+            app:text_color="#ffff"
+            android:layout_gravity="center"
+            android:background="@null" />
+
+        <View
+            android:layout_width="@dimen/activity_vertical_margin"
+            android:layout_height="match_parent"/>
+
+        <com.singh.daman.mybutton.ShapedButton
+            android:id="@+id/circle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:text="Circle"
+            app:fill_color="@color/colorPrimaryDark"
+            app:button_type="circle"
+            app:stroke_color="@color/colorAccent"
+            app:stroke_width="15sp"
+            app:text_color="#ffff"
+            android:layout_gravity="center"
+            android:background="@null" />
+    </LinearLayout>
+</LinearLayout>
